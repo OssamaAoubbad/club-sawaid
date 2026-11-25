@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: club-sawaid
+
+  datasource:
+    url: jdbc:h2:mem:clouDb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true   # active le H2 console
+      path: /h2-console
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Configuration Email
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: oussamaaoubbad@gmail.com
+    password: gccs uurx bjqq brwh # Mot de passe d'application Google
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+        transport:
+          protocol: smtp
+
+# JWT Configuration
+jwt:
+  secret-key: zvZ/WXkRjuhDJMcaBuafzC7EqQkBjvTe9IMxsw2R5A8Pj+58aeLwxrfbCUQGWGNXM3zyKb9UhMCP8dZxGlKxnQ==
+  expiration: 900000  # 1 heure
+  refresh-expiration: 604800000  # 24 heures
+
+# Configuration de l'application
+app:
+  base-url: http://localhost:5173
+  verification-token-expiry: 24  # heures
+  reset-password-token-expiry: 1  # heures
+
+
+
+
